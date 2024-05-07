@@ -39,7 +39,7 @@ const Education = () => {
                       </div>
                       {/* <!-- Content --> */}
                       <div className="text-foreground">
-                        Name of Department : Finance
+                        Name of Department : Accounting
                         <br />
                         Session : 2020-2021
                         <br />
@@ -63,7 +63,7 @@ const Education = () => {
                         </div>
                       </div>
                       {/* <!-- Content --> */}
-                      <div className="text-slate-500">
+                      <div className="text-foreground">
                         Group : Business Studies <br />
                         Year of Exam : 2020 <br />
                         Grade Achieved : GPA 4.48 Out of 5.00 scales.
@@ -86,7 +86,7 @@ const Education = () => {
                         </div>
                       </div>
                       {/* <!-- Content --> */}
-                      <div className="text-slate-500">
+                      <div className="text-foreground">
                         Group : Business Studies <br />
                         Year of Exam : 2018 <br />
                         Grade Achieved : GPA 4.17 Out of 5.00 scales.
