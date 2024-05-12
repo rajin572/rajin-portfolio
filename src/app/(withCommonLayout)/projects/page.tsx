@@ -21,10 +21,18 @@ const ProjectPage = async () => {
         My Projects
       </h1>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5">
-          {sortedProjectData.map((project: TProjects) => (
-            <ProjectCard key={project?._id} projects={project} />
-          ))}
+        <div className="grid grid-cols-1 justify-items-center items-center gap-5">
+          {sortedProjectData.map((project: TProjects, i: number) =>
+            i % 2 === 0 ? (
+              <ProjectCard key={project?._id} projects={project} />
+            ) : (
+              <ProjectCard
+                key={project?._id}
+                projects={project}
+                className="lg:order-last"
+              />
+            )
+          )}
         </div>
       </Container>
     </div>

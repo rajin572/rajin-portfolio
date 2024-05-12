@@ -47,16 +47,11 @@ const Banner = () => {
                   </span>
                 </h3>
                 <p className="text-slate-300">
-                  I’m a web developer, specifically a MERN Stack Developer. I am
-                  passionate about my work and my goal. My goal is to leverage
-                  my expertise in MongoDB, Express.js, React, and Node.js to
-                  contribute to innovative and dynamic projects within a
-                  forward-thinking organization. I have a strong knowledge About
-                  HTML, CSS, JavaScript, TypeScript, ReactJs, Redux, NextJS,
-                  NodeJS ExpressJS, MongoDB. I have a positive outlook and am
-                  always willing to learn new things. I am a capable and
-                  consistent problem-solver skilled at prioritizing and managing
-                  projects with proficiency.
+                  I’m a web developer, specifically a MERN Stack Developer. I
+                  have a strong knowledge About HTML, CSS, JavaScript,
+                  TypeScript, ReactJs, Redux, NextJS, NodeJS ExpressJS, MongoDB.
+                  I am a capable and consistent problem-solver skilled at
+                  prioritizing and managing projects with proficiency.
                 </p>
                 <div className="flex justify-start items-center gap-5 my-5">
                   <Link href="https://github.com/rajin572/" target="_blank">
@@ -86,7 +81,7 @@ const Banner = () => {
                   href="https://drive.google.com/file/d/113GzghW9Nxo6tJpTNNVq7st4czO-Q6g3/view?usp=sharing"
                   target="_blank"
                 >
-                  <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary duration-500">
+                  <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary hover:text-primary duration-500">
                     My Resume
                   </button>
                 </Link>

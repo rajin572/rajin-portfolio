@@ -7,20 +7,20 @@ import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
 const BlogCard = ({ blog }: { blog: TBlogs }) => {
   return (
-    <div className=" lg:h-[260px] w-full grid grid-cols-1 md:grid-cols-6 gap-4 justify-items-center items-center border border-secondary rounded p-2 mt-5">
+    <div className="w-[280px] sm:w-[350px] lg:w-[300px] xl:w-[350px] border border-secondary rounded mt-5">
       <Image
         src={blog?.image}
         alt="blog-image"
         width={0}
         height={0}
         sizes="100vw"
-        className="md:col-span-2 w-full h-full lg:h-60 object-fill"
+        className="w-full h-[200px] object-fill rounded-t"
       />
-      <div className="md:col-span-4 self-start px-2">
-        <h3 className="text-2xl mb-2 text-foreground font-semibold">
-          {blog?.title}
+      <div className="px-2 py-2">
+        <h3 className=" mb-2 text-primary-foreground font-semibold text-lg ">
+          <Link href={`/blogs/${blog?._id}`}>{blog?.title}</Link>
         </h3>
-        <div className="flex justify-between items-center text-sm mb-5">
+        <div className="flex justify-between items-center text-xs mb-5">
           <div className="flex justify-center items-center  text-foreground">
             <FaRegCalendarAlt className="text-primary-foreground" />
             <p className="ps-1">{blog?.publishDate}</p>
@@ -30,8 +30,8 @@ const BlogCard = ({ blog }: { blog: TBlogs }) => {
             <p className="ps-1">{blog?.readingTime} Min</p>
           </div>
         </div>
-        <p className="mb-4 text-slate-400">
-          {blog?.description.slice(0, 350)}
+        <p className="text-slate-400">
+          {blog?.description.slice(0, 150)}
           <Link
             href={`/blogs/${blog?._id}`}
             className="text-primary-foreground font-semibold cursor-pointer"

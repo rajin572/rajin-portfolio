@@ -1,5 +1,5 @@
 export type TProjects = {
-  _id: string;
+  _id?: string;
   image: string;
   title: string;
   liveLink: string;
@@ -9,6 +9,12 @@ export type TProjects = {
   keyFeature: string[];
   ratting: number;
   description: string;
+};
+export type Tskill = {
+  _id?: string;
+  image: string;
+  skillName: string;
+  percentage: number;
 };
 export type TBlogs = {
   _id: string;

@@ -5,19 +5,9 @@ import React from "react";
 
 const MySelf = () => {
   return (
-    <div className="w-full pt-20">
+    <div className="w-full py-20">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-y-0 gap-x-0 lg:gap-x-10 justify-items-center my-10">
-          <div className=" py-5 border-2 border-secondary rounded bg-secondary">
-            <Image
-              src="https://i.ibb.co/g49tYYT/Rajin-photo-no-background.png"
-              alt="my-image"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-[250px] h-[300px] md:w-[300px] md:h-[350px] lg:w-[320px] lg:h-[380px] "
-            />
-          </div>
           <div className="lg:col-span-2">
             <div className=" mb-5">
               <h1 className=" text-foreground text-3xl mb-1 font-bold">
@@ -46,10 +36,21 @@ const MySelf = () => {
               href="https://drive.google.com/file/d/113GzghW9Nxo6tJpTNNVq7st4czO-Q6g3/view?usp=sharing"
               target="_blank"
             >
-              <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary duration-500">
+              <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary hover:text-primary duration-500">
                 My Resume
               </button>
             </Link>
+          </div>
+          <div className="relative">
+            <Image
+              src="https://i.ibb.co/Ks2dnfb/Rajin-photo-whte.png"
+              alt="my-image"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-[250px] h-[300px] md:w-[300px] md:h-[350px] lg:w-[350px] lg:h-[380px] border-2 border-secondary rounded"
+            />
+            <div className="w-[250px] h-[300px] md:w-[300px] md:h-[350px] lg:w-[350px] lg:h-[380px] bg-transparent border-2 border-secondary rounded -mt-[290px] ml-[10px] md:-mt-[340px] lg:-mt-[370px]"></div>
           </div>
         </div>
       </Container>

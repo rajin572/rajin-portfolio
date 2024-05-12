@@ -22,24 +22,34 @@ const Projects = async () => {
 
   return (
     <div className="py-20 ">
-      <div className="mt-10 flex justify-center items-center flex-col mb-20">
-        <p className="text-primary-foreground font-bold mb-5 text-xl sm:text-2xl">
+      <div className="mt-10 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
           Projects
-        </p>
-        <h1 className=" text-foreground text-2xl  sm:text-4xl mb-3 font-bold place-items-start">
-          My Top Projects
         </h1>
+        <p className="text-foreground font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          Top Rated Projects
+        </p>
         <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
       </div>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center gap-5">
-          {sortedProjectData.slice(0, 3).map((project: TProjects) => (
-            <ProjectCard key={project?._id} projects={project} />
-          ))}
+        <div className="grid grid-cols-1 justify-items-center items-center gap-5 mt-20">
+          {sortedProjectData
+            .slice(0, 3)
+            .map((project: TProjects, i: number) =>
+              i % 2 === 0 ? (
+                <ProjectCard key={project?._id} projects={project} />
+              ) : (
+                <ProjectCard
+                  key={project?._id}
+                  projects={project}
+                  className="lg:order-last"
+                />
+              )
+            )}
         </div>
         <div className="mt-10 text-center ">
           <Link href="/projects">
-            <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary duration-500">
+            <button className="bg-transparent border-2 border-secondary px-4 py-2 rounded mt-5 text-foreground hover:bg-secondary hover:text-primary duration-500">
               View All
             </button>
           </Link>

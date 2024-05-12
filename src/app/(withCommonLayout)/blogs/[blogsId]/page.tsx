@@ -22,7 +22,7 @@ const BlogDetailsPage = async ({ params }: IBLogID) => {
   const blog = await res.json();
   const { data }: { data: TBlogs } = blog;
   return (
-    <div>
+    <div className="my-20">
       <Container>
         <div className=" mt-20 text-foreground">
           {/* image */}
@@ -59,7 +59,7 @@ const BlogDetailsPage = async ({ params }: IBLogID) => {
           <div className=" flex justify-start items-center flex-wrap gap-2">
             {data?.technology.map((item: string, i: number) => (
               <span
-                className="py-1 px-3 bg-purple-200 text-xs rounded text-primary-foreground"
+                className="py-[2px] px-2 bg-slate-800 hover:bg-secondary text-xs md:text-sm rounded text-primary-foreground hover:text-primary duration-500"
                 key={i}
               >
                 {item}

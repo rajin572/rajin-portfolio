@@ -7,20 +7,22 @@ import {
   FaInstagramSquare,
   FaLinkedin,
 } from "react-icons/fa";
+import ContactGridCrad from "./ContactGridCrad";
 
 const Contact = () => {
   return (
-    <div className="py-20">
-      <div className="mt-10 flex justify-center items-center flex-col mb-20">
-        <p className="text-primary-foreground font-bold mb-5 text-xl sm:text-2xl">
+    <div className="py-20 mt-20">
+      <div className="my-10 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
           Contact
-        </p>
-        <h1 className=" text-foreground text-2xl  sm:text-4xl mb-3 font-bold place-items-start">
-          Connect With Me!
         </h1>
+        <p className="text-foreground font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          Connect With Me!
+        </p>
         <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
       </div>
       <Container>
+        <ContactGridCrad />
         <div>
           <p className="w-full md:w-[75%] lg:w-[50%] mx-auto text-center">
             My inbox is always open. Whenever you have a question or just want

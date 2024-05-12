@@ -12,7 +12,7 @@ const NavItems = [
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="bg-background z-[999] text-foreground">
+    <div className="bg-background z-[999] text-foreground border-b border-secondary">
       <Container>
         <header className=" mx-auto py-3 flex justify-between items-center z-50 ">
           {/* //*Company name */}

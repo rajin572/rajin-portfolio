@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Aleo as FontSans } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/utils/cn";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "RAJIN",
@@ -17,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={
-          (montserrat.className,
-          "min-h-screen bg-background text-foreground antialiased")
-        }
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
       >
         {children}
       </body>
