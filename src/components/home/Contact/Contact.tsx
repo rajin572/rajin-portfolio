@@ -1,17 +1,11 @@
 import Container from "@/components/ui/Container";
-import Link from "next/link";
 import React from "react";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagramSquare,
-  FaLinkedin,
-} from "react-icons/fa";
 import ContactGridCrad from "./ContactGridCrad";
+import ContactFrom from "./ContactFrom";
 
 const Contact = () => {
   return (
-    <div className="py-20 mt-20">
+    <div className="py-20 mt-20 mb-20">
       <div className="my-10 flex justify-center items-center flex-col">
         <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
           Contact
@@ -23,7 +17,18 @@ const Contact = () => {
       </div>
       <Container>
         <ContactGridCrad />
-        <div>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-5 font-bold place-items-start text-primary-foreground opacity-50">
+          Get In Touch
+        </h1>
+        <p className="text-foreground text-xl sm:text-2xl md:w-[80%] mx-auto text-center mb-2">
+          DON'T BE SHY!
+        </p>
+        <p className="text-secondary sm:text-xl md:w-[80%] mx-auto text-center mb-10">
+          Feel free to either send me an email or fill in the form below and I
+          will get back to you as soon as possible.
+        </p>
+        <ContactFrom />
+        {/* <div>
           <p className="w-full md:w-[75%] lg:w-[50%] mx-auto text-center">
             My inbox is always open. Whenever you have a question or just want
             to say hi, <br /> I’ll try my best to get back to you!
@@ -63,7 +68,7 @@ const Contact = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
     </div>
   );
