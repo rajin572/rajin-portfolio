@@ -23,6 +23,7 @@ const ContactFrom = () => {
                 id: toastId,
                 duration: 1000,
               });
+              reset();
             },
             (error: { text: any }) => {
               toast.error(error.text, {

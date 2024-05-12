@@ -44,7 +44,7 @@ const SkillsTablePage = async () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className=" w-20 h-20 "
+                  className=" w-10 h-10 "
                 />
               </TableCell>
               <TableCell>{skill?.skillName}</TableCell>

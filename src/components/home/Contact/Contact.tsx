@@ -21,7 +21,7 @@ const Contact = () => {
           Get In Touch
         </h1>
         <p className="text-foreground text-xl sm:text-2xl md:w-[80%] mx-auto text-center mb-2">
-          DON'T BE SHY!
+          DO NOT BE SHY!
         </p>
         <p className="text-secondary sm:text-xl md:w-[80%] mx-auto text-center mb-10">
           Feel free to either send me an email or fill in the form below and I
