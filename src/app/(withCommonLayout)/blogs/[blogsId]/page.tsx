@@ -67,7 +67,14 @@ const BlogDetailsPage = async ({ params }: IBLogID) => {
             ))}
           </div>
           {/* details */}
-          <p className="mt-10">{data?.description}</p>
+          {data?.description ? (
+            <div
+              className="mt-10"
+              dangerouslySetInnerHTML={{ __html: data?.description }}
+            ></div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </Container>
     </div>

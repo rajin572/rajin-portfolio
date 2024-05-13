@@ -15,9 +15,8 @@ const Blog = async () => {
 
   const sortedBlogData = blogData?.data
     ?.slice()
-    .sort(
-      (a: { createdAt: number }, b: { createdAt: number }) =>
-        b.createdAt - a.createdAt
+    .sort((a: TBlogs, b: TBlogs) =>
+      (b.createdAt || "").localeCompare(a.createdAt || "")
     );
   return (
     <div className="mt-20">

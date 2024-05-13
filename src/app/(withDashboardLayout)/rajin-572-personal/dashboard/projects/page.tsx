@@ -29,6 +29,15 @@ const ProjectTablePage = async () => {
     );
   return (
     <div>
+      <div className="mt-10 mb-20 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
+          Projects
+        </h1>
+        <p className="text-foreground font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          My All Projects
+        </p>
+        <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
+      </div>
       <Table>
         <TableCaption>A list of My Projects</TableCaption>
         <TableHeader>

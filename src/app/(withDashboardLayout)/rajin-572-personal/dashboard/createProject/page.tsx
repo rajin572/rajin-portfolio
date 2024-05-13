@@ -57,6 +57,15 @@ const CreateProject = () => {
   };
   return (
     <div className="my-20">
+      <div className="mt-10 mb-20 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
+          Project
+        </h1>
+        <p className="text-foreground font-bold mb-3 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          Create A New Project
+        </p>
+        <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
+      </div>
       <form
         className="md:grid md:grid-cols-2 gap-5"
         onSubmit={handleSubmit(onSubmit)}

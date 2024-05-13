@@ -17,13 +17,14 @@ export type Tskill = {
   percentage: number;
 };
 export type TBlogs = {
-  _id: string;
+  _id?: string;
   image: string;
   title: string;
   readingTime: number;
   author: string;
   technology: string[];
+  shortDescription: string;
   description: string;
-  publishDate: string;
-  createdAt: string;
+  publishDate?: string;
+  createdAt?: string;
 };

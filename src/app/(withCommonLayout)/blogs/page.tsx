@@ -18,11 +18,17 @@ const BlogPage = async () => {
     );
   return (
     <div className="my-20">
-      <h1 className="font-extrabold text-center text-foreground text-4xl mb-10">
-        My Blogs
-      </h1>
+      <div className="my-10 flex justify-center items-center flex-col">
+        <h1 className="text-5xl sm:text-6xl mb-2 font-bold place-items-start text-primary-foreground opacity-15">
+          Blogs
+        </h1>
+        <p className="text-foreground font-bold mb-2 text-2xl sm:text-3xl  -mt-12 sm:-mt-[54px]">
+          All Posted Blogs
+        </p>
+        <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
+      </div>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center py-20">
           {sortedBlogData.map((blog: TBlogs) => (
             <BlogCard key={blog?._id} blog={blog} />
           ))}
