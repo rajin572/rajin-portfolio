@@ -30,7 +30,7 @@ const BlogCard = ({ blog }: { blog: TBlogs }) => {
             <p className="ps-1">{blog?.readingTime} Min</p>
           </div>
         </div>
-        <p className="text-slate-400">
+        <p className="text-slate-400 text-ellipsis">
           {blog?.shortDescription?.slice(0, 150)}
           <Link
             href={`/blogs/${blog?._id}`}

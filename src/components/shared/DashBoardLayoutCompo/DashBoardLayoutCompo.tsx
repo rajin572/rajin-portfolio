@@ -31,7 +31,7 @@ const DashBoardLayoutCompo = ({ children }: { children: React.ReactNode }) => {
               <p className="text-slate-400 text-sm">Admin</p>
             </div>
             <Image
-              src="https://i.pinimg.com/736x/64/81/22/6481225432795d8cdf48f0f85800cf66.jpg"
+              src="https://i.ibb.co/ZhQRGsZ/Rajin-photo-whte.png"
               width={40}
               height={40}
               alt="profile-image"

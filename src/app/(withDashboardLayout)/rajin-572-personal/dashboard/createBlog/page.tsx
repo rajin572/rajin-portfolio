@@ -276,6 +276,7 @@ const CreateBlog = () => {
             ref={editor}
             value={content}
             onBlur={(newContent) => setContent(newContent)}
+            config={{ theme: "dark" }}
             className="text-primary bg-secondary"
           />
         </div>
@@ -297,7 +298,7 @@ const CreateBlog = () => {
               <path d="M8 12h8" />
               <path d="M12 8v8" />
             </svg>
-            <span>Create Project</span>
+            <span>Create Blog</span>
           </button>
         </div>
       </form>
