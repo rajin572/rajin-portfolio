@@ -22,7 +22,7 @@ const ProjectDetailsPage = async ({ params }: IProjectId) => {
   const project = await res.json();
 
   return (
-    <div className="mt-32">
+    <div className="my-32">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start ">
           <div className="w-full h-[250px] sm:h-[400px]  lg:h-[350px] xl:h-[400px] border-2 flex justify-center items-center">
@@ -69,12 +69,16 @@ const ProjectDetailsPage = async ({ params }: IProjectId) => {
                     </div>
                   </Link>
                   {/* Github Link Server */}
-                  <Link href={project?.data?.serverLink} target="_blank">
-                    <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
-                      <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
-                      <p>Server</p>
-                    </div>
-                  </Link>
+                  {project?.data?.serverLink ? (
+                    <Link href={project?.data?.serverLink} target="_blank">
+                      <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
+                        <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
+                        <p>Server</p>
+                      </div>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>

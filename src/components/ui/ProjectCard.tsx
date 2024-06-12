@@ -1,5 +1,9 @@
+"use client";
+
 import { TProjects } from "@/types";
+import useScrollGrow from "@/utils/ScrollGrow";
 import { cn } from "@/utils/cn";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,8 +16,9 @@ type TProjectCardProps = {
 };
 
 const ProjectCard = ({ projects, className }: TProjectCardProps) => {
+  const { style, componentRef } = useScrollGrow();
   return (
-    <div className="mb-5">
+    <motion.div style={style} ref={componentRef} className="mb-5">
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-start">
         <div className={cn(className)}>
           <Link href={`/projects/${projects?._id}`} className="mb-5">
@@ -72,18 +77,22 @@ const ProjectCard = ({ projects, className }: TProjectCardProps) => {
                 </div>
               </Link>
               {/* Github Link Server */}
-              <Link href={projects?.serverLink} target="_blank">
-                <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
-                  <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
-                  <p>Server</p>
-                </div>
-              </Link>
+              {projects?.serverLink ? (
+                <Link href={projects?.serverLink} target="_blank">
+                  <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
+                    <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
+                    <p>Server</p>
+                  </div>
+                </Link>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>
       </div>
       {/* <hr className="mt-10 bg-secondary text-secondary border-secondary" /> */}
-    </div>
+    </motion.div>
   );
 };
 

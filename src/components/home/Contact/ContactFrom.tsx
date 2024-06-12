@@ -155,12 +155,12 @@ const ContactFrom = () => {
               <path d="M16 12H8" />
               <path d="M13 16H8" />
             </svg>
-            <span> Description :</span>
+            <span> Message :</span>
           </label>
           <textarea
             {...register("message")}
             name="message"
-            placeholder="Enter Your Description"
+            placeholder="Enter Your Message"
             required
             className="h-40 border focus:border-secondary focus:ring-secondary p-2 outline-none w-full mt-3 rounded bg-primary"
           />

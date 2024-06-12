@@ -144,7 +144,8 @@ const CreateBlog = () => {
               strokeLinejoin="round"
               className="lucide lucide-dollar-sign text-secondary"
             >
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
             </svg>
             <span> Reading Time :</span>
           </label>
@@ -171,8 +172,8 @@ const CreateBlog = () => {
               strokeLinejoin="round"
               className="lucide lucide-captions text-secondary"
             >
-              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-              <circle cx="12" cy="12" r="3" />
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
             <span> Author Name:</span>
           </label>

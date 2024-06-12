@@ -83,12 +83,16 @@ const ProjectTablePage = async () => {
                   </div>
                 </Link>
                 {/* Github Link Server */}
-                <Link href={project?.serverLink} target="_blank">
-                  <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
-                    <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
-                    <p>Server</p>
-                  </div>
-                </Link>
+                {project?.serverLink ? (
+                  <Link href={project?.serverLink} target="_blank">
+                    <div className=" group py-1 px-3 duration-500 bg-background hover:bg-secondary text-sm rounded  text-primary-foreground flex justify-center items-center hover:text-primary border border-secondary cursor-pointer gap-1">
+                      <FaGithub className="text-primary-foreground group-hover:text-primary text-sm " />
+                      <p>Server</p>
+                    </div>
+                  </Link>
+                ) : (
+                  ""
+                )}
               </TableCell>
               <TableCell>
                 <DeleteProjectModal project={project} />

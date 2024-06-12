@@ -45,6 +45,7 @@ const CreateProject = () => {
           id: toastId,
           duration: 1000,
         });
+        reset();
       } else {
         throw new Error();
       }
@@ -207,7 +208,6 @@ const CreateProject = () => {
             {...register("githubServer")}
             name="githubServer"
             placeholder="Enter Your Github Server"
-            required
             className="border-2 focus:border-secondary focus:ring-secondary p-2 outline-none w-full mt-3 rounded bg-primary"
           />
         </div>
@@ -366,6 +366,9 @@ const CreateProject = () => {
             placeholder="Enter Your Rating"
             required
             className="border-2 focus:border-secondary focus:ring-secondary p-2 outline-none w-full mt-3 rounded bg-primary"
+            min="0"
+            step="0.01"
+            pattern="^\d+(?:\.\d{1,2})?$"
           />
         </div>
         <div className="mb-5 col-span-2">

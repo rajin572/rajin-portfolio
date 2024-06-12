@@ -11,7 +11,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div style={{ clipPath: "polygon(0 10%, 100% 0, 100% 100%, 0% 100%)" }}>
-      <div className="bg-accent text-foreground py-5 ">
+      <div className="bg-accent text-foreground pt-20 pb-5 ">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:justify-items-center items-start pt-20">
             <div className="mb-5 lg:mb-0">

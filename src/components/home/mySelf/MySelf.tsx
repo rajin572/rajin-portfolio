@@ -1,13 +1,42 @@
+"use client";
+
 import Container from "@/components/ui/Container";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
+
+const aboutImage = {
+  initial: { y: 0 },
+  animate: {
+    y: 15,
+    transition: {
+      duration: 1,
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  },
+};
 
 const MySelf = () => {
+  const view = useRef<HTMLDivElement>(null);
+  const inView = useInView(view);
   return (
-    <div className="w-full py-20">
+    <div className="w-full py-20  overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-y-0 gap-x-0 lg:gap-x-10 justify-items-center my-10">
+        <motion.div
+          ref={view}
+          animate={
+            inView
+              ? { opacity: 1, y: 0, transition: { duration: 1 } }
+              : { opacity: 0, y: -200, transition: { duration: 1 } }
+          }
+          className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-y-0 gap-x-0 lg:gap-x-10 justify-items-center my-10"
+        >
           <div className="lg:col-span-2">
             <div className=" mb-5">
               <h1 className=" text-foreground text-3xl mb-1 font-bold">
@@ -41,7 +70,12 @@ const MySelf = () => {
               </button>
             </Link>
           </div>
-          <div className="relative">
+          <motion.div
+            variants={aboutImage}
+            initial="initial"
+            animate="animate"
+            className="relative"
+          >
             <Image
               src="https://i.ibb.co/Ks2dnfb/Rajin-photo-whte.png"
               alt="my-image"
@@ -51,8 +85,8 @@ const MySelf = () => {
               className="w-[250px] h-[300px] md:w-[300px] md:h-[350px] lg:w-[350px] lg:h-[380px] border-2 border-secondary rounded"
             />
             <div className="w-[250px] h-[300px] md:w-[300px] md:h-[350px] lg:w-[350px] lg:h-[380px] bg-transparent border-2 border-secondary rounded -mt-[290px] ml-[10px] md:-mt-[340px] lg:-mt-[370px]"></div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </div>
   );

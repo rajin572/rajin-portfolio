@@ -1,4 +1,8 @@
+"use client";
+
 import { TBlogs } from "@/types";
+import useScrollGrow from "@/utils/ScrollGrow";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,8 +10,13 @@ import { CiClock1 } from "react-icons/ci";
 import { FaRegCalendarAlt, FaUser } from "react-icons/fa";
 
 const BlogCard = ({ blog }: { blog: TBlogs }) => {
+  const { style, componentRef } = useScrollGrow();
   return (
-    <div className="w-[280px] sm:w-[350px] lg:w-[300px] xl:w-[350px] border border-secondary rounded mt-5">
+    <motion.div
+      style={style}
+      ref={componentRef}
+      className="w-[280px] sm:w-[350px] lg:w-[300px] xl:w-[350px] border border-secondary rounded mt-5"
+    >
       <Image
         src={blog?.image}
         alt="blog-image"
@@ -40,7 +49,7 @@ const BlogCard = ({ blog }: { blog: TBlogs }) => {
           </Link>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

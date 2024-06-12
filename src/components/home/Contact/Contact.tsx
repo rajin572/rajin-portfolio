@@ -1,9 +1,36 @@
+"use client";
+
 import Container from "@/components/ui/Container";
-import React from "react";
+import React, { useRef } from "react";
 import ContactGridCrad from "./ContactGridCrad";
 import ContactFrom from "./ContactFrom";
+import { motion, useInView } from "framer-motion";
+
+const intro = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+      delayChildren: 0,
+    },
+  },
+};
+
+const introChildren = {
+  hidden: { opacity: 0, y: -200 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, type: "spring", bounce: 0.5 },
+  },
+};
 
 const Contact = () => {
+  const view = useRef<HTMLDivElement>(null);
+
+  const inView = useInView(view);
   return (
     <div className="py-20 mt-20 mb-20">
       <div className="my-10 flex justify-center items-center flex-col">
@@ -16,59 +43,24 @@ const Contact = () => {
         <div className="w-48 h-1 bg-secondary rounded mx-auto"></div>
       </div>
       <Container>
-        <ContactGridCrad />
-        <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-5 font-bold place-items-start text-primary-foreground opacity-50">
-          Get In Touch
-        </h1>
-        <p className="text-foreground text-xl sm:text-2xl md:w-[80%] mx-auto text-center mb-2">
-          DO NOT BE SHY!
-        </p>
-        <p className="text-secondary sm:text-xl md:w-[80%] mx-auto text-center mb-10">
-          Feel free to either send me an email or fill in the form below and I
-          will get back to you as soon as possible.
-        </p>
-        <ContactFrom />
-        {/* <div>
-          <p className="w-full md:w-[75%] lg:w-[50%] mx-auto text-center">
-            My inbox is always open. Whenever you have a question or just want
-            to say hi, <br /> I’ll try my best to get back to you!
-          </p>
-          <div className="mt-10 text-center">
-            <Link href="mailto:din.islam.rajin572@gmail.com">
-              <button className="bg-transparent border-2 border-secondary px-6 py-4 rounded font-bold text-foreground hover:bg-secondary duration-500">
-                Send Me A Message
-              </button>
-            </Link>
-          </div>
-          <div className="mt-10">
-            <h1 className=" text-foreground text-xl text-center font-extrabold">
-              Follow Me
+        <motion.div
+          variants={intro}
+          ref={view}
+          initial="hidden"
+          animate={inView ? "visible" : ""}
+        >
+          <motion.div variants={introChildren}>
+            <ContactGridCrad />
+          </motion.div>
+          <motion.div variants={introChildren}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl text-center mb-5 font-bold place-items-start text-primary-foreground opacity-50">
+              Get In Touch
             </h1>
-            <div className="flex justify-center items-center gap-5 my-5 ">
-              <Link href="https://github.com/rajin572/" target="_blank">
-                <FaGithub className="text-primary-foreground cursor-pointer  text-2xl" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/din-islam-rajin/"
-                target="_blank"
-              >
-                <FaLinkedin className="text-primary-foreground cursor-pointer text-2xl" />
-              </Link>
-              <Link
-                href="https://www.facebook.com/din.islam.rajin"
-                target="_blank"
-              >
-                <FaFacebook className="text-primary-foreground cursor-pointer  text-2xl" />
-              </Link>
-              <Link
-                href="https://www.instagram.com/dir_razin_572/"
-                target="_blank"
-              >
-                <FaInstagramSquare className="text-primary-foreground cursor-pointer text-2xl" />
-              </Link>
-            </div>
-          </div>
-        </div> */}
+          </motion.div>
+          <motion.div variants={introChildren}>
+            <ContactFrom />
+          </motion.div>
+        </motion.div>
       </Container>
     </div>
   );
