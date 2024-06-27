@@ -22,7 +22,7 @@ const BlogDetailsPage = async ({ params }: IBLogID) => {
   const blog = await res.json();
   const { data }: { data: TBlogs } = blog;
   return (
-    <div className="my-20">
+    <div className="mt-20 mb-28 ">
       <Container>
         <div className=" mt-20 text-foreground">
           {/* image */}

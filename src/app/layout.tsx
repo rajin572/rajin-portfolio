@@ -9,7 +9,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "RAJIN",
+  title: "Din Islam Rajin",
   description: "Din Islam Rajin Portfolio",
 };
 
