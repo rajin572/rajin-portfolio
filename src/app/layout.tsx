@@ -10,7 +10,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Din Islam Rajin",
-  description: "Din Islam Rajin Portfolio",
+  description: "Din Islam Rajin",
 };
 
 export default function RootLayout({
